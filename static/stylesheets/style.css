@@ -1,0 +1,43 @@
+body {
+  padding-top: 60px;
+}
+.starter-template {
+  text-align: left;
+}
+.container {
+  width: auto;
+}
+.form-group {
+	padding: 10px;
+}
+nav {
+	height: 50px;
+	line-height: 50px;
+	vertical-align: left;
+	padding-left: 20px; 
+	margin-bottom: 10px;
+}
+.navbar-brand {
+	font-size: 20px;
+}
+#navbar {
+	font-size: 20px;
+}
+#logo {
+	position: absolute;
+	right: 40px;
+	top: 70px;
+}
+
+footer {
+	padding: 20px 25px;
+}
+
+#result {
+	margin-top: 25px;
+}
+
+.etym {
+	font-size: 0.9em;
+}
+

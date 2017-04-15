@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="{{ url_for('static', filename='stylesheets/style.css') }}" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+</head>
+<body>
+   <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index"><b>Drozhki</b></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/upload">Загрузите текст</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<div class="container">
+      <div class="starter-template">
+        <h1 class="col-sm-8"> Дрожки (Drozhki) </h1>
+        <img src="http://hsestore.ru/images/logohse.jpg" id='logo'>
+        <p class="col-sm-8"> - это веб-приложение, которое призвано сделать чтение произведений русской литературы XIX века понятнее современному читателю. Нажмите на пункт меню "Загрузите текст" и вставьте литературное произведение или его отрывок в окно ввода. Программа вычислит слова, с пониманием которых у современного читателя могут возникнуть трудности, и сопроводит их толкованием из Малого академического словаря русского языка. Толкование можно увидеть при наведении на выделенное слово, расширенная информация (толкование + примеры употреблений) появится при клике на него.</p>
+        <h2 class="col-sm-8"> Пример: </h2>
+        <p class="col-sm-8">Беспрестанно оглядываясь на со всех сторон двигавшиеся обозы выезжавших из Москвы и оправляясь своим тучным телом, чтобы не соскользнуть с дребезжащих старых <a href="/submit/144805" target="_blank" data-toggle="tooltip" title="ДРОЖКИ - легкий открытый экипаж.">дрожек,</a> Пьер, испытывая радостное чувство, подобное тому, которое испытывает мальчик, убежавший из школы, разговорился с извозчиком. <i>(Л.&nbsp;Н.&nbsp;Толстой "Война и мир")</i></p>
+        <h2 class="col-sm-8"> О технологии </h2>
+        <p class="col-sm-8">
+        Технология была реализована для проекта <a href="http://time2read.ru/" target="_blank">"Живые страницы"</a>. Данное веб-приложение делает ее доступной для обработки любого литературного произведения. Технология основана на предположении, что чем ниже частота слова, тем больше вероятность, что оно будет непонятно читателю. Был выбран частотный порог <a href="http://dict.ruslang.ru/freq_faq.html#ipm" target="_blank">ipm</a>, ниже которого слова считаются "непонятными", и были применены  морфологические фильтры. Исходный код доступен по <a href="https://github.com/okdiplodok/comment_web_app" target="_blank">ссылке</a>.</p>
+      </div>
+    </div><!-- /.container -->
+<footer class="container">
+  <div class="row">
+    <p class="col-sm-4">&copy; Школа лингвистики, НИУ ВШЭ</p>
+ <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+</body> 
+</html>
