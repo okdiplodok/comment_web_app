@@ -4,15 +4,15 @@ import pymorphy2
 import preprocess
 import csv
 
-with open('new_ind_text.csv', mode='r', encoding='utf-8') as infile:
+with open('/home/lpolyanskaya/comment_web_app/new_ind_text.csv', mode='r', encoding='utf-8') as infile:
     reader = csv.reader(infile, delimiter='\t')
     ind_text = {rows[0]:rows[1] for rows in reader}
 
-with open('word_ind.csv', mode='r', encoding='utf-8') as infile:
+with open('/home/lpolyanskaya/comment_web_app/word_ind.csv', mode='r', encoding='utf-8') as infile:
     reader = csv.reader(infile, delimiter='\t')
     word_ind = {rows[1]:rows[0] for rows in reader}
 
-with open('ind_tool.csv', mode='r', encoding='utf-8') as infile:
+with open('/home/lpolyanskaya/comment_web_app/ind_tool.csv', mode='r', encoding='utf-8') as infile:
     reader = csv.reader(infile, delimiter='\t')
     ind_tool = {rows[0]:rows[1] for rows in reader}
 
