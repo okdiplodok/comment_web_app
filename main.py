@@ -92,4 +92,5 @@ def definition(index):
     return render_template('definition.html', defin=defin)
 
 
-app.run(debug=True)
+if __name__ == '__main__': 
+    app.run(debug=True)
