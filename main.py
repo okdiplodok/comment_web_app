@@ -4,13 +4,16 @@ import pymorphy2
 import preprocess
 import csv
 
+ 
 with open('/home/lpolyanskaya/comment_web_app/new_ind_text.csv', mode='r', encoding='utf-8') as infile:
     reader = csv.reader(infile, delimiter='\t')
     ind_text = {rows[0]:rows[1] for rows in reader}
 
+
 with open('/home/lpolyanskaya/comment_web_app/word_ind.csv', mode='r', encoding='utf-8') as infile:
     reader = csv.reader(infile, delimiter='\t')
     word_ind = {rows[1]:rows[0] for rows in reader}
+
 
 with open('/home/lpolyanskaya/comment_web_app/ind_tool.csv', mode='r', encoding='utf-8') as infile:
     reader = csv.reader(infile, delimiter='\t')
@@ -46,6 +49,10 @@ def index():
 @app.route('/upload')
 def form():
     return render_template('text.html')
+
+@app.route('/english')
+def english():
+    return render_template('english.html')
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
