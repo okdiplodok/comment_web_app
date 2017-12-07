@@ -28,33 +28,33 @@ def href_make(l, t):
         if word_ind[l] in ind_tool:
             if '\n' in t:
                 t = t.replace('\n', '')
-                return '<a href="/submit/' + word_ind[l] + '"' + ' target="_blank" data-toggle="tooltip" title="' + ind_tool[word_ind[l]] + '">' + t + '</a><br>'
+                return '<a href="/drozhki/submit/' + word_ind[l] + '"' + ' target="_blank" data-toggle="tooltip" title="' + ind_tool[word_ind[l]] + '">' + t + '</a><br>'
             else:
-                return '<a href="/submit/' + word_ind[l] + '"' + ' target="_blank" data-toggle="tooltip" title="' + ind_tool[word_ind[l]] + '">' + t + '</a>'
+                return '<a href="/drozhki/submit/' + word_ind[l] + '"' + ' target="_blank" data-toggle="tooltip" title="' + ind_tool[word_ind[l]] + '">' + t + '</a>'
         else:
             if '\n' in t:
                 t = t.replace('\n', '')
-                return '<a href="/submit/' + word_ind[l] + '"' + ' target="_blank">' + t + '</a><br>'
+                return '<a href="/drozhki/submit/' + word_ind[l] + '"' + ' target="_blank">' + t + '</a><br>'
             else:
-                return '<a href="/submit/' + word_ind[l] + '"' + ' target="_blank">' + t + '</a>'            
+                return '<a href="/drozhki/submit/' + word_ind[l] + '"' + ' target="_blank">' + t + '</a>'            
     else:
         return t.replace('\n', '<br>')
 
    
 app = Flask(__name__)
-@app.route('/index')
+@app.route('/drozhki')
 def index():
     return render_template('start.html')
 
-@app.route('/upload')
+@app.route('/drozhki/upload')
 def form():
     return render_template('text.html')
 
-@app.route('/english')
+@app.route('/drozhki/english')
 def english():
     return render_template('english.html')
 
-@app.route('/submit', methods=['GET', 'POST'])
+@app.route('/drozhki/submit', methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
         if len(request.form['novel']) > 0:
@@ -86,7 +86,7 @@ def submit():
         else:
             return render_template('text.html')      
             
-@app.route('/submit/<index>')
+@app.route('/drozhki/submit/<index>')
 def definition(index):
     defin = ind_text[index]
     return render_template('definition.html', defin=defin)

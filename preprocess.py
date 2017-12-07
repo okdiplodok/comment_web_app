@@ -3,7 +3,6 @@ import pymorphy2
 
 st = open('/home/lpolyanskaya/comment_web_app/stoplist.txt', 'r', encoding='utf-8').readlines()
 
-
 def freq_dic():
     d = {}
     k = open('/home/lpolyanskaya/comment_web_app/freqrnc2011.csv', 'r', encoding='utf-8')
