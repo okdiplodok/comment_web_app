@@ -42,19 +42,19 @@ def href_make(l, t):
 
    
 app = Flask(__name__)
-@app.route('/drozhki')
+@app.route('/')
 def index():
     return render_template('start.html')
 
-@app.route('/drozhki/upload')
+@app.route('/upload')
 def form():
     return render_template('text.html')
 
-@app.route('/drozhki/english')
+@app.route('/english')
 def english():
     return render_template('english.html')
 
-@app.route('/drozhki/submit', methods=['GET', 'POST'])
+@app.route('/submit', methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
         if len(request.form['novel']) > 0:
@@ -86,7 +86,7 @@ def submit():
         else:
             return render_template('text.html')      
             
-@app.route('/drozhki/submit/<index>')
+@app.route('/submit/<index>')
 def definition(index):
     defin = ind_text[index]
     return render_template('definition.html', defin=defin)
